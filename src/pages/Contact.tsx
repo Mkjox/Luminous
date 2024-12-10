@@ -1,8 +1,15 @@
+import { Breadcrumb, BreadcrumbItem, BreadcrumbLink, BreadcrumbList } from "@/components/ui/breadcrumb";
 
 const Contact = () => {
     return (
         <div>
-            <h1>Contact Page</h1>
+            <Breadcrumb>
+                <BreadcrumbList>
+                    <BreadcrumbItem>
+                    <BreadcrumbLink href="/" className="breadcrumb">Contact</BreadcrumbLink>
+                    </BreadcrumbItem>
+                </BreadcrumbList>
+            </Breadcrumb>
         </div>
     )
 }

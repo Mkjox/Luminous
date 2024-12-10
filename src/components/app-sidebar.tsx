@@ -1,8 +1,9 @@
 import { Contact, Home, Info, Search, Settings } from "lucide-react"
- 
+
 import {
   Sidebar,
   SidebarContent,
+  SidebarFooter,
   SidebarGroup,
   SidebarGroupContent,
   SidebarGroupLabel,
@@ -10,7 +11,8 @@ import {
   SidebarMenuButton,
   SidebarMenuItem,
 } from "@/components/ui/sidebar"
- 
+import { ModeToggle } from "./mode-toggle"
+
 // Menu items.
 const items = [
   {
@@ -40,13 +42,14 @@ const items = [
     icon: Settings,
   },
 ]
- 
+
 export function AppSidebar() {
   return (
+
     <Sidebar>
-      <SidebarContent>
+      <SidebarContent className="sidebar-content">
         <SidebarGroup>
-          <SidebarGroupLabel>Application</SidebarGroupLabel>
+          <SidebarGroupLabel className="sidebar-title">Luminous</SidebarGroupLabel>
           <SidebarGroupContent>
             <SidebarMenu>
               {items.map((item) => (
@@ -56,9 +59,13 @@ export function AppSidebar() {
                       <item.icon />
                       <span>{item.title}</span>
                     </a>
+
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
+              <SidebarFooter>
+                <ModeToggle />
+              </SidebarFooter>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
