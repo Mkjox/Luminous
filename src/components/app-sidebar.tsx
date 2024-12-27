@@ -49,9 +49,9 @@ export function AppSidebar() {
     <Sidebar>
       <SidebarContent className="sidebar-content">
         <SidebarGroup>
-          <SidebarGroupLabel className="sidebar-title">Luminous</SidebarGroupLabel>
+          <SidebarGroupLabel className="sidebar-title text-sm mb-2">Luminous</SidebarGroupLabel>
           <SidebarGroupContent>
-            <SidebarMenu>
+            <SidebarMenu className="ml-2">
               {items.map((item) => (
                 <SidebarMenuItem key={item.title}>
                   <SidebarMenuButton asChild>
@@ -63,13 +63,14 @@ export function AppSidebar() {
                   </SidebarMenuButton>
                 </SidebarMenuItem>
               ))}
-              <SidebarFooter>
-                <ModeToggle />
-              </SidebarFooter>
             </SidebarMenu>
           </SidebarGroupContent>
         </SidebarGroup>
       </SidebarContent>
+      <SidebarFooter className="self-end flex-row">
+        <p className="self-center mr-2">Theme</p>
+        <ModeToggle />
+      </SidebarFooter>
     </Sidebar>
   )
 }
